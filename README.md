@@ -1,7 +1,7 @@
-<H3>ENTER YOUR NAME</H3>
-<H3>ENTER YOUR REGISTER NO.</H3>
+<H3>ENTER YOUR NAME: ASHWANTH R</H3>
+<H3>ENTER YOUR REGISTER NO: 212224040033</H3>
 <H3>EX. NO.1</H3>
-<H3>DATE</H3>
+<H3>DATE : 19-08-2025</H3>
 <H1 ALIGN =CENTER> Introduction to Kaggle and Data preprocessing</H1>
 
 ## AIM:
@@ -39,9 +39,132 @@ STEP 6:Splitting the data into test and train<BR>
 ##  PROGRAM:
 TYPE YOUR CODE HERE
 
+Importing the libraries
+```python
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+```
 
+Load the dataset and Head values
+```python
+data = pd.read_csv("Churn_Modelling.csv")
+data.head()
+```
+
+Shape of the dataset
+```python
+data.shape
+```
+
+Missing values
+```python
+data.isnull().sum()
+```
+
+Duplicate values
+```python
+data.isnull().sum()
+```
+
+X values
+```python
+X = data.iloc[:,:-1].values
+X
+```
+
+Y values
+```python
+Y = data.iloc[:,-1].values
+Y
+```
+Description of the dataset
+```python
+data.describe()
+```
+
+Dropping the string values
+```python
+data = data.drop(['Surname','Geography','Gender'],axis=1)
+data.head()
+```
+
+Normalize the dataset
+```python
+scaler = MinMaxScaler()
+df = pd.DataFrame(scaler.fit_transform(data))
+print(df)
+```
+
+Splitting the data into training and testing set
+```python
+X_train ,X_test ,y_train,y_test=train_test_split(X,Y,test_size=0.2)
+```
+
+X_train
+```python
+```
+
+X_test
+```python
+X_test
+```
+
+Length of the training and testing sets
+```python
+print("Length of the training set : ",len(X_train),"\nLength of the testing set : ",len(X_test))
+```
 ## OUTPUT:
 SHOW YOUR OUTPUT HERE
+
+Load the dataset and Head values
+
+![alt text](screenshots/1.png)
+
+Shape of the dataset
+
+![alt text](screenshots/2.png)
+
+Missing values
+
+![alt text](screenshots/3.png)
+
+Duplicate values
+
+![alt text](screenshots/4.png)
+
+X values
+
+![alt text](screenshots/5.png)
+
+Y values
+
+![alt text](screenshots/6.png)
+
+Description of the dataset
+
+![alt text](screenshots/7.png)
+
+Dropping the string values
+
+![alt text](screenshots/8.png)
+
+Normalize the dataset
+
+![alt text](screenshots/9.png)
+
+X_train
+
+![alt text](screenshots/10.png)
+
+X_test
+
+![alt text](screenshots/11.png)
+
+Length of the training and testing sets
+
+![alt text](screenshots/12.png)
+
 
 
 ## RESULT:
